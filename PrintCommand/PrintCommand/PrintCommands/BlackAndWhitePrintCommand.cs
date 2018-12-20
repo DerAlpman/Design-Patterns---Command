@@ -20,6 +20,8 @@ namespace PrintCommand.PrintCommands
             this._Printer = printer;
         }
 
+        #region IPrintCommand
+
         /// <summary>
         /// <see cref="IPrintCommand.Execute(string)"/>
         /// </summary>
@@ -29,5 +31,7 @@ namespace PrintCommand.PrintCommands
             _Printer.Configure();
             _Printer.Printing(document);
         }
+
+        #endregion
     }
 }

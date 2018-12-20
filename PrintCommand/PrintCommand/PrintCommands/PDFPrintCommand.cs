@@ -5,20 +5,22 @@ using PrintCommand.Printer;
 namespace PrintCommand.PrintCommands
 {
     /// <summary>
-    /// <para>Class for matrix print commands</para>
+    /// <para>Class for colour print commands</para>
     /// </summary>
-    internal class MatrixPrinterCommand : IPrintCommand
+    internal class PDFPrintCommand : IPrintCommand
     {
         #region FIELDS
 
-        private MatrixPrinter _Printer;
+        private PDFPrinter _Printer;
 
         #endregion
 
-        public MatrixPrinterCommand(MatrixPrinter printer)
+        public PDFPrintCommand(PDFPrinter printer)
         {
             this._Printer = printer;
         }
+
+        #region IPrintCommand
 
         /// <summary>
         /// <see cref="IPrintCommand.Execute(string)"/>
@@ -26,8 +28,9 @@ namespace PrintCommand.PrintCommands
         public void Execute(string document)
         {
             Console.WriteLine(string.Format("{0}: Execute command", this.GetType().Name));
-            _Printer.ConfigureCumbersome();
-            _Printer.Printing(document);
+            _Printer.Saving(document);
         }
+
+        #endregion
     }
 }

@@ -31,9 +31,17 @@ namespace PrintCommand
             #region PRINT COMMANDS
 
             IPrintCommand blackAndWhitePrintCommand = new BlackAndWhitePrintCommand(bwPrinter);
-            IPrintCommand colourPrintCommand = new ColourPrinterCommand(cPrinter);
-            IPrintCommand matrixPrintCommand = new MatrixPrinterCommand(mPrinter);
-            IPrintCommand pdfPrintCommand = new PDFPrinterCommand(pdfPrinter);
+            IPrintCommand colourPrintCommand = new ColourPrintCommand(cPrinter);
+            IPrintCommand matrixPrintCommand = new MatrixPrintCommand(mPrinter);
+            IPrintCommand pdfPrintCommand = new PDFPrintCommand(pdfPrinter);
+
+            PrintQueueCommand printQueueCommand = new PrintQueueCommand();
+            printQueueCommand.AddCommand(blackAndWhitePrintCommand);
+            printQueueCommand.AddCommand(colourPrintCommand);
+            printQueueCommand.AddCommand(matrixPrintCommand);
+            printQueueCommand.AddCommand(pdfPrintCommand);
+
+            IPrintCommand directorPrintCommand = new DirectorPrintCommand(eva);
 
             #endregion
 
@@ -48,12 +56,22 @@ namespace PrintCommand
             Console.WriteLine();
 
             heiko.PrintCommand = pdfPrintCommand;
-            heiko.Print("heiko's source code");
+            heiko.Print("Heiko's source code");
 
             Console.WriteLine();
 
             heiko.PrintCommand = matrixPrintCommand;
-            heiko.Print("heiko's source code");
+            heiko.Print("Heiko's source code");
+
+            Console.WriteLine();
+
+            kevin.PrintCommand = printQueueCommand;
+            kevin.Print("Kevin's print queue.");
+
+            Console.WriteLine();
+
+            herrSchulte.PrintCommand = directorPrintCommand;
+            herrSchulte.Print("Order 666");
 
             Console.ReadKey();
         }

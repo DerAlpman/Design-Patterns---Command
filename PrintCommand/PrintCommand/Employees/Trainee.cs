@@ -29,7 +29,7 @@ namespace PrintCommand.Employees
 
         #endregion
 
-        #region METHODS
+        #region IEmployee
 
         /// <summary>
         /// <see cref="IEmployee.Print(string)"/>

@@ -49,10 +49,12 @@
     <Compile Include="Employees\Trainee.cs" />
     <Compile Include="Interfaces\IEmployee.cs" />
     <Compile Include="Interfaces\IPrintCommand.cs" />
-    <Compile Include="PrintCommands\PDFPrinterCommand.cs" />
-    <Compile Include="PrintCommands\ColourPrinterCommand.cs" />
-    <Compile Include="PrintCommands\MatrixPrinterCommand.cs" />
+    <Compile Include="PrintCommands\DirectorPrintCommand.cs" />
+    <Compile Include="PrintCommands\PDFPrintCommand.cs" />
+    <Compile Include="PrintCommands\ColourPrintCommand.cs" />
+    <Compile Include="PrintCommands\MatrixPrintCommand.cs" />
     <Compile Include="PrintCommands\BlackAndWhitePrintCommand.cs" />
+    <Compile Include="PrintCommands\PrintQueueCommand.cs" />
     <Compile Include="Printer\BlackAndWhitePrinter.cs" />
     <Compile Include="Printer\ColourPrinter.cs" />
     <Compile Include="Printer\MatrixPrinter.cs" />
